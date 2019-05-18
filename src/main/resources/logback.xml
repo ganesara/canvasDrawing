@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+	<property name="LOG_PATTERN"
+		value="%d %-5level [%thread] [%logger{36}] : %msg%n%rEx" />
+
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>${LOG_PATTERN}</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="LOG_FILE"
+		class="ch.qos.logback.core.FileAppender">
+		<file>logs/apps.log</file>
+		<encoder>
+			<Pattern>${LOG_PATTERN}</Pattern>
+		</encoder>
+	</appender>
+
+	<appender name="LOG_FILE_ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+		<queueSize>500</queueSize>
+		<discardingThreshold>5</discardingThreshold>
+		<appender-ref ref="LOG_FILE" />
+	</appender>
+
+
+	  
+	<logger name="org.draw.paint" level="TRACE"
+		additivity="false">
+		<appender-ref ref="LOG_FILE_ASYNC" />
+	</logger>
+
+	<logger name="ch.qos.logback" level="OFF" additivity="false">
+		<appender-ref ref="LOG_FILE_ASYNC" />
+	</logger>
+
+	<root level="OFF">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
