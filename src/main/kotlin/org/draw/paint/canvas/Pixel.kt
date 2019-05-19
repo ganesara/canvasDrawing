@@ -2,8 +2,8 @@ package org.draw.paint.canvas
 
 open class Pixel(x: Int, y: Int) {
 
-    private var text: String = ""
-    private val position: Position
+    var text: String = ""
+    val position: Position
 
     init {
         text = ""
@@ -13,10 +13,6 @@ open class Pixel(x: Int, y: Int) {
 
     constructor(x:Int, y:Int, text: String): this(x = x, y = y) {
         this.text  =  text
-    }
-
-    fun display(): String {
-        return this.text
     }
 
     fun isBlank():Boolean {
@@ -42,6 +38,6 @@ open class Pixel(x: Int, y: Int) {
 
 data class Position(val x: Int, val y:Int)
 
-class WidthBorder(x: Int, y: Int) : Pixel(x = x, y = y, text = CanvasConstants.WIDTH_BORDER)
+class WidthBorder(x: Int, y: Int) : Pixel(x = x, y = y, text = CanvasConstants.WIDTH_BORDER_CHAR)
 
-class HeightBorder(x: Int, y:Int) : Pixel(x = x, y = y, text =  CanvasConstants.HEIGHT_BORDER)
+class HeightBorder(x: Int, y:Int) : Pixel(x = x, y = y, text =  CanvasConstants.HEIGHT_BORDER_CHAR)

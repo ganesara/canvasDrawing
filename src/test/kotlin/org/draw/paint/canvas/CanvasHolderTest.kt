@@ -34,8 +34,21 @@ class CanvasHolderTest {
             |   |
             -----
         """.trimIndent()
-        holder.print()
+        holder.printScreen()
         assertEquals(outContent.toString(), expected)
+    }
+
+    @Test
+    fun testReadAndWritePixel() {
+        val holder =  CanvasHolder()
+        holder.createCanvas(width = 3, height = 4)
+        val pos =  Position(x=1, y=1)
+        assertEquals(holder.getPixcelValueAt(pos = pos), CanvasConstants.DEFAULT_DISPLAY_CHAR)
+        assertTrue(holder.isPositionWritable(pos = pos))
+        assertTrue(holder.setPixelValueAt(pos = pos, value = "*"))
+        assertEquals(holder.getPixcelValueAt(pos = pos), "*")
+        assertFalse(holder.setPixelValueAt(pos = pos, value = "*", overwrite = false))
+        assertEquals(holder.getPixcelValueAt(pos = Position(x = 4, y = 4)), CanvasConstants.INVALID_TEXT_CHAR)
     }
 
 }
