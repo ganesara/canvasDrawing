@@ -19,28 +19,37 @@ class CanvasRunner {
     }
 
     private val canvas: ICanvas
+    private val builder:CommandBuilder
 
     init {
         canvas =  CanvasHolder()
+        builder= CommandBuilder()
     }
 
+    private fun readLine(): String {
+        val scanner = Scanner(System.`in`)
+        return scanner.nextLine()
+    }
+
+    internal fun executeCommand(command: String) {
+        val status = builder.setStringCommand(command).build().execute(canvas = this.canvas)
+
+        if(status.isSuccess()) {
+            canvas.printScreen()
+        }
+
+        Status.statusProcessor(status = status)
+    }
 
     private fun executeConsoleCommands() {
-        val scanner = Scanner(System.`in`)
         var command: String
-        val builder =  CommandBuilder()
 
         do {
             print("Enter Command :")
-            command = scanner.nextLine()
+            command = this.readLine()
             log.trace("Received instruction as $command")
-            val status = builder.setStringCommand(command).build().execute(canvas = this.canvas)
+            this.executeCommand(command = command)
 
-            if(status.isSuccess()) {
-                canvas.printScreen()
-            }
-
-            Status.statusProcessor(status = status)
         } while (true)
     }
 
@@ -48,6 +57,5 @@ class CanvasRunner {
     fun start() {
         executeConsoleCommands()
     }
-
 
 }
