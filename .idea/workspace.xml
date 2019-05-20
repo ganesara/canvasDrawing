@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b15e74f-d295-4ac1-b692-ca8f2d44d871" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/canvas/Canvas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/canvas/Canvas.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/canvas/CanvasHolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/canvas/CanvasHolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/canvas/ICanvas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/canvas/ICanvas.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/painter/FillPainter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/painter/FillPainter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/painter/RectanglePainter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/painter/RectanglePainter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/canvas/CanvasHolderTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/canvas/CanvasHolderTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/canvas/CanvasTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/canvas/CanvasTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/painter/FillPainterTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/painter/FillPainterTest.kt" afterDir="false" />
-    </list>
+    <list default="true" id="8b15e74f-d295-4ac1-b692-ca8f2d44d871" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -46,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/painter/RectanglePainter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+            <state relative-caret-position="240">
+              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -794,8 +784,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/painter/RectanglePainter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+        <state relative-caret-position="240">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
         </state>
       </provider>
     </entry>
