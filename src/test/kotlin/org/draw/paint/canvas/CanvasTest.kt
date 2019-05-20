@@ -57,12 +57,12 @@ class CanvasTest {
     fun testReadAndWritePixel() {
         val canvas = Canvas(width = 3, height = 4)
         val pos =  Position(x=1, y=1)
-        assertEquals(canvas.getPixcelValueAt(pos = pos), CanvasConstants.DEFAULT_DISPLAY_CHAR)
+        assertEquals(canvas.getPixelValueAt(pos = pos), CanvasConstants.DEFAULT_DISPLAY_CHAR)
         assertTrue(canvas.isPositionWritable(pos = pos))
         assertTrue(canvas.setPixelValueAt(pos = pos, value = "*"))
-        assertEquals(canvas.getPixcelValueAt(pos = pos), "*")
+        assertEquals(canvas.getPixelValueAt(pos = pos), "*")
         assertFalse(canvas.setPixelValueAt(pos = pos, value = "*", overwrite = false))
-        assertEquals(canvas.getPixcelValueAt(pos = Position(x = 4, y = 4)), CanvasConstants.INVALID_TEXT_CHAR)
+        assertEquals(canvas.getPixelValueAt(pos = Position(x = 4, y = 4)), CanvasConstants.INVALID_TEXT_CHAR)
     }
 
     @Test
@@ -162,5 +162,34 @@ class CanvasTest {
         """.trimIndent()
         assertEquals(expectedResult, result)
         assertEquals(outContent.toString(), printOut)
+    }
+
+    @Test
+    fun testWritableChildrenOf() {
+        val canvas = Canvas(width = 5, height = 6)
+
+        var list = canvas.writableChildrenOf(pos = Position(1,1))
+        assertEquals(list, listOf(Position(1,2), Position(2, 1)))
+
+        list = canvas.writableChildrenOf(pos = Position(3,3))
+        assertEquals(list, listOf(Position(3,4), Position(3,2),
+            Position(4, 3), Position(2,3)))
+
+        canvas.setPixelValueAt(Position(3,4),"*")
+        list = canvas.writableChildrenOf(pos = Position(3,3))
+        assertEquals(list, listOf( Position(3,2),
+            Position(4, 3), Position(2,3)))
+
+        canvas.setPixelValueAt(Position(3,2),"*")
+        list = canvas.writableChildrenOf(pos = Position(3,3))
+        assertEquals(list, listOf(Position(4, 3), Position(2,3)))
+
+        canvas.setPixelValueAt(Position(4,3),"*")
+        list = canvas.writableChildrenOf(pos = Position(3,3))
+        assertEquals(list, listOf(Position(2,3)))
+
+        canvas.setPixelValueAt(Position(2,3),"*")
+        list = canvas.writableChildrenOf(pos = Position(3,3))
+        assertTrue(list.isEmpty())
     }
 }

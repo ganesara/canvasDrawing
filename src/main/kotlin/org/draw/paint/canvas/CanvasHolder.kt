@@ -31,8 +31,8 @@ class CanvasHolder: ICanvas {
             = canvas.isPositionWritable(pos = pos)
 
 
-    override fun getPixcelValueAt(pos: Position): String
-            =  canvas.getPixcelValueAt(pos = pos)
+    override fun getPixelValueAt(pos: Position): String
+            =  canvas.getPixelValueAt(pos = pos)
 
 
     override fun setPixelValueAt(pos: Position, value: String, overwrite: Boolean): Boolean
@@ -51,6 +51,9 @@ class CanvasHolder: ICanvas {
            value = value,
            overwrite = overwrite)
     }
+
+    override fun writableChildrenOf(pos: Position): List<Position>
+            = canvas.writableChildrenOf(pos = pos)
 
     fun paint(painter: Painter) {
         painter.paint(this)

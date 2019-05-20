@@ -55,7 +55,7 @@ class Canvas(private val width: Int, private val height: Int) : ICanvas {
                 && this.pixels[pos.y][pos.x].isBlank()
     }
 
-    override fun getPixcelValueAt(pos: Position): String {
+    override fun getPixelValueAt(pos: Position): String {
 
         return if(this.isPositionAvailable(pos)) {
                 this.pixels[pos.y][pos.x].text
@@ -102,5 +102,27 @@ class Canvas(private val width: Int, private val height: Int) : ICanvas {
         }
 
         return affectedList
+    }
+
+    override fun writableChildrenOf(pos: Position): List<Position> {
+        val list =  mutableListOf<Position>()
+
+        if (this.isPositionWritable(Position(x = pos.x, y = pos.y + 1 ))) {
+            list.add(Position(x = pos.x, y = pos.y + 1 ))
+        }
+
+        if (this.isPositionWritable(Position(x = pos.x, y = pos.y - 1 ))) {
+            list.add(Position(x = pos.x, y = pos.y - 1 ))
+        }
+
+        if (this.isPositionWritable(Position(x = pos.x + 1, y = pos.y))) {
+            list.add(Position(x = pos.x + 1, y = pos.y))
+        }
+
+        if (this.isPositionWritable(Position(x = pos.x - 1, y = pos.y))) {
+            list.add(Position(x = pos.x - 1, y = pos.y))
+        }
+
+        return list
     }
 }

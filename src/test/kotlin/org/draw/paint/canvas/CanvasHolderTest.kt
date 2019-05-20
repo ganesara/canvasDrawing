@@ -43,12 +43,12 @@ class CanvasHolderTest {
         val holder =  CanvasHolder()
         holder.createCanvas(width = 3, height = 4)
         val pos =  Position(x=1, y=1)
-        assertEquals(holder.getPixcelValueAt(pos = pos), CanvasConstants.DEFAULT_DISPLAY_CHAR)
+        assertEquals(holder.getPixelValueAt(pos = pos), CanvasConstants.DEFAULT_DISPLAY_CHAR)
         assertTrue(holder.isPositionWritable(pos = pos))
         assertTrue(holder.setPixelValueAt(pos = pos, value = "*"))
-        assertEquals(holder.getPixcelValueAt(pos = pos), "*")
+        assertEquals(holder.getPixelValueAt(pos = pos), "*")
         assertFalse(holder.setPixelValueAt(pos = pos, value = "*", overwrite = false))
-        assertEquals(holder.getPixcelValueAt(pos = Position(x = 4, y = 4)), CanvasConstants.INVALID_TEXT_CHAR)
+        assertEquals(holder.getPixelValueAt(pos = Position(x = 4, y = 4)), CanvasConstants.INVALID_TEXT_CHAR)
     }
 
 }

@@ -30,4 +30,4 @@ class RectanglePainter(start: Position, end: Position)
             Success()
         }
     }
-}
+} 
