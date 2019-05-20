@@ -7,7 +7,7 @@ import org.draw.paint.common.Status
 import org.draw.paint.common.Success
 
 
-class CreateCanvasCommand(val width: Int, val height: Int): Command {
+class CreateCanvasCommand(internal val width: Int, internal val height: Int): Command {
 
     override fun execute(canvas: ICanvas): Status {
 

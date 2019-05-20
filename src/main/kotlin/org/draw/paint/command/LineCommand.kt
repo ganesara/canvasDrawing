@@ -6,10 +6,10 @@ import org.draw.paint.common.Status
 import org.draw.paint.painter.LinePainter
 
 
-class LineCommand(val startWidth: Int,
-                  val startHeight: Int,
-                  val endWidth: Int,
-                  val endHeight: Int): Command {
+class LineCommand(internal val startWidth: Int,
+                  internal val startHeight: Int,
+                  internal val endWidth: Int,
+                  internal val endHeight: Int): Command {
 
     override fun execute(canvas: ICanvas): Status {
         val painter =  LinePainter(start = Position(x = startWidth, y= startHeight),
