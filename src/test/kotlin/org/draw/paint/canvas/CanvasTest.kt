@@ -36,7 +36,8 @@ class CanvasTest {
             -----
         """.trimIndent() + "\n"
         canvas.printScreen()
-        assertEquals(outContent.toString(), result)
+        assertEquals(outContent.toString().replace(System.lineSeparator(), "\n"),
+            result.replace(System.lineSeparator(), "\n"))
     }
 
 
@@ -95,7 +96,8 @@ class CanvasTest {
             -------
         """.trimIndent() + "\n"
         assertEquals(result, expectedResult)
-        assertEquals(outContent.toString(), printOut)
+        assertEquals(outContent.toString().replace(System.lineSeparator(), "\n"),
+            printOut.replace(System.lineSeparator(), "\n"))
     }
 
     @Test
@@ -117,7 +119,8 @@ class CanvasTest {
             -------
         """.trimIndent() + "\n"
         assertEquals(result, expectedResult)
-        assertEquals(outContent.toString(), printOut)
+        assertEquals(outContent.toString().replace(System.lineSeparator(), "\n"),
+            printOut.replace(System.lineSeparator(), "\n"))
     }
 
     @Test
@@ -139,7 +142,8 @@ class CanvasTest {
             -------
         """.trimIndent() + "\n"
         assertEquals(result, expectedResult)
-        assertEquals(outContent.toString(), printOut)
+        assertEquals(outContent.toString().replace(System.lineSeparator(), "\n"),
+            printOut.replace(System.lineSeparator(), "\n"))
     }
 
     @Test
@@ -159,9 +163,10 @@ class CanvasTest {
             |     |
             |     |
             -------
-        """.trimIndent() + "\n"
+        """.trimIndent() + System.lineSeparator()
         assertEquals(expectedResult, result)
-        assertEquals(outContent.toString(), printOut)
+        assertEquals(outContent.toString().replace(System.lineSeparator(), "\n"),
+            printOut.replace(System.lineSeparator(), "\n"))
     }
 
     @Test

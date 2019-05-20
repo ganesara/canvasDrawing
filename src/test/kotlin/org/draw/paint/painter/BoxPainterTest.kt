@@ -90,6 +90,7 @@ class BoxPainterTest {
         holder.printScreen()
         assertTrue(painter.affectedPosition.containsAll(positions))
 //        assertEquals(positions, painter.affectedPosition)
-        assertEquals(box, outContent.toString())
+        assertEquals(box.replace(System.lineSeparator(), "\n"),
+            outContent.toString().replace(System.lineSeparator(), "\n"))
     }
 }

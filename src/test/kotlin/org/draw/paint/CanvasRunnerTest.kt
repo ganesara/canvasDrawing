@@ -45,7 +45,7 @@ class CanvasRunnerTest {
         |     *oooooooooooooo|
         ----------------------
         Done.
-    """.trimIndent() + "\n"
+    """.trimIndent() + System.lineSeparator()
 
     private lateinit var outContent: ByteArrayOutputStream
     private val actualOutStream =  System.out
@@ -71,6 +71,7 @@ class CanvasRunnerTest {
         runner.executeCommand(command = "R 14 1 18 3")
         runner.executeCommand(command = "B 10 3 o")
 
-        assertEquals(output, outContent.toString())
+        assertEquals(output.replace(System.lineSeparator(), "\n"),
+            outContent.toString().replace(System.lineSeparator(), "\n"))
     }
 }

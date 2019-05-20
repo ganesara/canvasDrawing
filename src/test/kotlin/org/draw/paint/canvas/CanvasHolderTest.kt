@@ -35,7 +35,8 @@ class CanvasHolderTest {
             -----
         """.trimIndent() + "\n"
         holder.printScreen()
-        assertEquals(outContent.toString(), expected)
+        assertEquals(outContent.toString().replace(System.lineSeparator(), "\n"),
+            expected.replace(System.lineSeparator(), "\n"))
     }
 
     @Test

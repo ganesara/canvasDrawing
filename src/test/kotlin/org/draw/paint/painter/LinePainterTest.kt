@@ -84,7 +84,8 @@ class LinePainterTest {
 
         assertTrue(result is Success)
         assertEquals(expectedResult, painter.affectedPositions)
-        assertEquals(outContent.toString(), printOut)
+        assertEquals(outContent.toString().replace(System.lineSeparator(), "\n"),
+            printOut.replace(System.lineSeparator(), "\n"))
     }
 
 }

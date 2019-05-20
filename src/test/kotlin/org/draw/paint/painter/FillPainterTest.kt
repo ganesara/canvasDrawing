@@ -75,7 +75,8 @@ class FillPainterTest {
         """.trimIndent() + "\n"
 
         assertEquals(fillPainter.affectedPositions,positions)
-        assertEquals(result , outContent.toString())
+        assertEquals(result.replace(System.lineSeparator(), "\n") ,
+            outContent.toString().replace(System.lineSeparator(), "\n"))
         //actualOutStream.println(outContent.toString())
     }
 
@@ -115,7 +116,8 @@ class FillPainterTest {
             Position(x=1, y=4), Position(x=1, y=3))
 
         assertEquals(fillPainter.affectedPositions,positions)
-        assertEquals(result , outContent.toString())
+        assertEquals(result.replace(System.lineSeparator(), "\n") ,
+            outContent.toString().replace(System.lineSeparator(), "\n"))
     }
 
     @Test
@@ -158,6 +160,7 @@ class FillPainterTest {
             Position(x=5, y=5), Position(x=5, y=6))
 
         assertEquals(fillPainter.affectedPositions,positions)
-        assertEquals(result , outContent.toString())
+        assertEquals(result.replace(System.lineSeparator(), "\n") ,
+            outContent.toString().replace(System.lineSeparator(), "\n"))
     }
 }
