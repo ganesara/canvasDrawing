@@ -8,6 +8,15 @@ enum class StatusTypes {
 
 open class Status(val status: StatusTypes) {
 
+    companion object{
+        fun statusProcessor(status: Status) {
+            when(status) {
+                is Success -> println("Done.")
+                is Failed -> println("Err: ${status.reason}")
+            }
+        }
+    }
+
     fun isSuccess(): Boolean {
         return status == StatusTypes.SUCCESS
     }

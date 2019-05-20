@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b15e74f-d295-4ac1-b692-ca8f2d44d871" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ClassDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandParser.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CreateCanvasCommand.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/FillCommand.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/FillCommandParser.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/QuitCommand.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/exception/CommandParserException.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/CanvasRunner.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/CreateCanvasCommandParserTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/FillCommandParserTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/LineCommandParserTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/QuitCommandParserTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/RectangleCommandParserTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/Painter.kt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/CommandBuilderTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/common/Status.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/common/Status.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -50,15 +39,6 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CreateCanvasCommand.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/FillCommandParser.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -76,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/org/draw/paint/CanvasRunner.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -88,14 +68,68 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandBuilder.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="340">
+              <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
               <folding>
-                <element signature="e#32#123#0" expanded="true" />
+                <element signature="e#32#226#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandParser.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/Command.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/common/Status.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/CommandBuilderTest.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/CreateCanvasCommandParserTest.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CreateCanvasCommandParser.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -126,8 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/painter/BoxPainterTest.kt" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.kts" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/painter/BoxPainter.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/painter/LinePainterTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/painter/RectanglePainter.kt" />
@@ -158,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/Parser/CreateCanvasCmmondParserTest.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/Parser/CreateCanvasCommandParserTest.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CreateCanvasCommandParser.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandParser.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/LineCommandParserTest.java" />
         <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/LineCommandParser.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/LineCommandParserTest.kt" />
@@ -175,8 +206,11 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/LineCommand.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/RectangleCommand.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/CanvaRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandBuilder.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/CanvasRunner.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandParser.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandBuilder.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/CommandBuilderTest.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/draw/paint/common/Status.kt" />
       </list>
     </option>
   </component>
@@ -233,7 +267,7 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="paint" type="462c0819:PsiDirectoryNode" />
-              <item name="canvas" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Drawing" type="b2602c69:ProjectViewProjectNode" />
@@ -242,7 +276,7 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="paint" type="462c0819:PsiDirectoryNode" />
-              <item name="command" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Drawing" type="b2602c69:ProjectViewProjectNode" />
@@ -271,6 +305,24 @@
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="paint" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drawing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drawing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="paint" type="462c0819:PsiDirectoryNode" />
+              <item name="command" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drawing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drawing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="paint" type="462c0819:PsiDirectoryNode" />
+              <item name="painter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Drawing" type="b2602c69:ProjectViewProjectNode" />
@@ -318,7 +370,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.drawing [clean test]">
+  <component name="RunManager" selected="Gradle.CommandBuilderTest.testCommandBuilder">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -331,12 +383,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FillCommandParserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CommandBuilderTest.testCommandBuilder" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;org.draw.paint.command.FillCommandParserTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;org.draw.paint.command.CommandBuilderTest.testCommandBuilder&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -351,12 +403,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="LineCommandParserTest.testMath" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FillCommandParserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;org.draw.paint.command.LineCommandParserTest.testMath&quot;" />
+        <option name="scriptParameters" value="--tests &quot;org.draw.paint.command.FillCommandParserTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -478,19 +530,19 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.drawing [clean test]" />
-      <item itemvalue="Gradle.LineCommandParserTest.testMath" />
       <item itemvalue="Gradle.LineCommandParserTest.testParser" />
       <item itemvalue="Gradle.RectangleCommandParserTest" />
       <item itemvalue="Gradle.FillCommandParserTest" />
       <item itemvalue="Gradle.QuitCommandParserTest" />
+      <item itemvalue="Gradle.CommandBuilderTest.testCommandBuilder" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CommandBuilderTest.testCommandBuilder" />
         <item itemvalue="Gradle.QuitCommandParserTest" />
         <item itemvalue="Gradle.FillCommandParserTest" />
         <item itemvalue="Gradle.RectangleCommandParserTest" />
         <item itemvalue="Gradle.LineCommandParserTest.testParser" />
-        <item itemvalue="Gradle.LineCommandParserTest.testMath" />
       </list>
     </recent_temporary>
   </component>
@@ -515,12 +567,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CreateCanvasCmdParserTest_testParser - 2019.05.20 at 12h 49m 04s.xml">
-      <configuration name="CreateCanvasCmdParserTest.testParser" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="LineCommandParserTest_testMath - 2019.05.20 at 13h 14m 07s.xml">
-      <configuration name="LineCommandParserTest.testMath" configurationId="GradleRunConfiguration" />
-    </history-entry>
     <history-entry file="LineCommandParserTest_testParser - 2019.05.20 at 13h 16m 45s.xml">
       <configuration name="LineCommandParserTest.testParser" configurationId="GradleRunConfiguration" />
     </history-entry>
@@ -544,6 +590,12 @@
     </history-entry>
     <history-entry file="drawing_[clean_test] - 2019.05.20 at 14h 23m 43s.xml">
       <configuration name="drawing [clean test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="CommandBuilderTest_testCommandBuilder - 2019.05.20 at 15h 04m 59s.xml">
+      <configuration name="CommandBuilderTest.testCommandBuilder" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="CommandBuilderTest_testCommandBuilder - 2019.05.20 at 15h 19m 16s.xml">
+      <configuration name="CommandBuilderTest.testCommandBuilder" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -595,13 +647,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -732,13 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/common/Status.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/canvas/CanvasConstants.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -791,13 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CreateCanvasCommandParser.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/LineCommandParserTest.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -812,13 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/CreateCanvasCommandParserTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" selection-start-line="15" selection-end-line="22" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -902,13 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandParser.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CreateCanvasCommand.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -951,6 +968,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/org/draw/paint/CanvasRunner.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <element signature="e#24#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CreateCanvasCommandParser.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/CreateCanvasCommandParserTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/org/draw/paint/command/CommandBuilderTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/common/Status.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/Command.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -958,22 +1013,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandBuilder.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandParser.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#32#123#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/org/draw/paint/CanvasRunner.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/draw/paint/command/CommandBuilder.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="340">
+          <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
           <folding>
-            <element signature="e#24#102#0" expanded="true" />
+            <element signature="e#32#226#0" expanded="true" />
           </folding>
         </state>
       </provider>
