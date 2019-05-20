@@ -80,6 +80,7 @@ class LinePainterTest {
             |     |
             |     |
             -------
+
         """.trimIndent()
 
         assertTrue(result is Success)

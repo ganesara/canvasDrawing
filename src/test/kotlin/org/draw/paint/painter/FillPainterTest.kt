@@ -72,6 +72,7 @@ class FillPainterTest {
             | **** |
             |      |
             --------
+
         """.trimIndent()
 
         assertEquals(fillPainter.affectedPositions,positions)
@@ -103,6 +104,7 @@ class FillPainterTest {
             |.****.|
             |......|
             --------
+
         """.trimIndent()
 
         val positions =  listOf(Position(x=1, y=1), Position(x=1, y=2),
@@ -151,6 +153,7 @@ class FillPainterTest {
             |          |
             |          |
             ------------
+
         """.trimIndent()
 
         val positions =  listOf(Position(x=4, y=5), Position(x=4, y=6),

@@ -83,6 +83,7 @@ class BoxPainterTest {
             |      |
             |      |
             --------
+
         """.trimIndent()
 
         val status = painter.paint(holder)

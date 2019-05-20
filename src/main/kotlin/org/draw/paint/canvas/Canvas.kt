@@ -34,6 +34,7 @@ class Canvas(private val width: Int, private val height: Int) : ICanvas {
                 print(this.pixels[i][j])
             }
         }
+        println()
     }
 
     override fun isPositionAvailable(pos: Position): Boolean {

@@ -33,6 +33,7 @@ class CanvasHolderTest {
             |   |
             |   |
             -----
+
         """.trimIndent()
         holder.printScreen()
         assertEquals(outContent.toString(), expected)
