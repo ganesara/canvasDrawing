@@ -20,8 +20,8 @@ sourceSets {
 dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
     testImplementation group: 'junit', name: 'junit', version: '4.12'
-    implementation 'ch.qos.logback:logback-classic:1.2.3'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 compileKotlin {
@@ -29,4 +29,14 @@ compileKotlin {
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    manifest {
+        attributes 'Main-Class': 'org.draw.paint.CanvasRunnerKt'
+    }
 }
