@@ -19,7 +19,7 @@ class CommandBuilder {
         FillCommandParser(), LineCommandParser(), RectangleCommandParser(), FillCommandParser(), QuitCommandParser())
 
     fun setStringCommand(string: String):CommandBuilder {
-        command =  string
+        command =  string.trim()
         return  this
     }
 
