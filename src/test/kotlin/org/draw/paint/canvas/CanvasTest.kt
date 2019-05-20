@@ -34,8 +34,7 @@ class CanvasTest {
             |   |
             |   |
             -----
-
-        """.trimIndent()
+        """.trimIndent() + "\n"
         canvas.printScreen()
         assertEquals(outContent.toString(), result)
     }
@@ -94,8 +93,7 @@ class CanvasTest {
             |     |
             |     |
             -------
-
-        """.trimIndent()
+        """.trimIndent() + "\n"
         assertEquals(result, expectedResult)
         assertEquals(outContent.toString(), printOut)
     }
@@ -117,8 +115,7 @@ class CanvasTest {
             |     |
             |     |
             -------
-
-        """.trimIndent()
+        """.trimIndent() + "\n"
         assertEquals(result, expectedResult)
         assertEquals(outContent.toString(), printOut)
     }
@@ -140,8 +137,7 @@ class CanvasTest {
             |     |
             |     |
             -------
-
-        """.trimIndent()
+        """.trimIndent() + "\n"
         assertEquals(result, expectedResult)
         assertEquals(outContent.toString(), printOut)
     }
@@ -163,8 +159,7 @@ class CanvasTest {
             |     |
             |     |
             -------
-
-        """.trimIndent()
+        """.trimIndent() + "\n"
         assertEquals(expectedResult, result)
         assertEquals(outContent.toString(), printOut)
     }

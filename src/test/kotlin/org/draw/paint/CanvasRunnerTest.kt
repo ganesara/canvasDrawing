@@ -45,8 +45,7 @@ class CanvasRunnerTest {
         |     *oooooooooooooo|
         ----------------------
         Done.
-
-    """.trimIndent()
+    """.trimIndent() + "\n"
 
     private lateinit var outContent: ByteArrayOutputStream
     private val actualOutStream =  System.out

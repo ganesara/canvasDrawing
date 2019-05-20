@@ -80,8 +80,7 @@ class LinePainterTest {
             |     |
             |     |
             -------
-
-        """.trimIndent()
+        """.trimIndent() + "\n"
 
         assertTrue(result is Success)
         assertEquals(expectedResult, painter.affectedPositions)

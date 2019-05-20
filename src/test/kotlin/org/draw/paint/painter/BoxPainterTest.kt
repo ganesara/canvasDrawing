@@ -83,8 +83,7 @@ class BoxPainterTest {
             |      |
             |      |
             --------
-
-        """.trimIndent()
+        """.trimIndent() + "\n"
 
         val status = painter.paint(holder)
         assertTrue(status is Success)
