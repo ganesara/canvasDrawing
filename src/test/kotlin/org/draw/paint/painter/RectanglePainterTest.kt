@@ -1,6 +1,6 @@
 package org.draw.paint.painter
 
-import org.draw.paint.canvas.CanvasHolder
+import org.draw.paint.canvas.Canvas
 import org.draw.paint.canvas.Position
 import org.draw.paint.common.Failed
 import org.junit.Assert
@@ -10,7 +10,7 @@ class RectanglePainterTest {
 
     @Test
     fun testValidation() {
-        val holder =  CanvasHolder()
+        val holder =  Canvas()
         holder.createCanvas(width = 5, height = 7)
 
         var painter =  RectanglePainter(start = Position(x = 2, y = 2),

@@ -9,8 +9,8 @@ class PixelTest {
 
     @Test
     fun instanceEqualsTest() {
-        val p =  Pixel(1, 2, "abc")
-        val q = Pixel(x = 5, y = 8, text =  "abc")
+        val p =  Pixel( "abc")
+        val q = Pixel(txt =  "abc")
         assertTrue(p == q)
     }
 

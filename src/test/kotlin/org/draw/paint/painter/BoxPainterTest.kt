@@ -1,6 +1,6 @@
 package org.draw.paint.painter
 
-import org.draw.paint.canvas.CanvasHolder
+import org.draw.paint.canvas.Canvas
 import org.draw.paint.canvas.Position
 import org.draw.paint.common.Failed
 import org.draw.paint.common.Success
@@ -31,7 +31,7 @@ class BoxPainterTest {
 
     @Test
     fun testValidate() {
-        val holder =  CanvasHolder()
+        val holder =  Canvas()
         holder.createCanvas(width = 5, height = 7)
 
         var painter =  BoxPainter(start = Position(x = 2, y = 3),
@@ -62,7 +62,7 @@ class BoxPainterTest {
 
     @Test
     fun testBoxPaint() {
-        val holder =  CanvasHolder()
+        val holder =  Canvas()
         holder.createCanvas(width = 6 , height = 7)
         val painter =  BoxPainter(start = Position(x= 2, y = 2),
             end = Position(x= 5, y=5)

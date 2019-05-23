@@ -2,7 +2,6 @@
 class CanvasRunner
 interface ICanvas
 class CanvasConstants
-class CanvasHolder
 class Canvas
 class Pixel
 class WidthBorder
@@ -11,7 +10,7 @@ class Status
 enum StatusTypes
 class Success
 class Failed
-class CommandParserException
+class CanvasException
 class Position
 
 interface Painter
@@ -19,24 +18,12 @@ class BoxPainter
 class FillPainter
 class LinePainter
 class RectanglePainter
+class CanvasPainter
 
 interface Command
-class CreateCanvasCommand
-class FillCommand
-class LineCommand
-class QuitCommand
-class RectangleCommand
-class CommandBuilder
-interface CommandParser
-class CreateCanvasCommandParser
-class FillCommandParser
-class LineCommandParser
-class QuitCommandParser
-class RectangleCommandParser
+class CommandParser
 
-ICanvas <|-- CanvasHolder
 ICanvas <|-- Canvas
-CanvasHolder "1" o-- Canvas
 Canvas "..1*" *-- Pixel
 Status <|-- Success
 Status <|-- Failed
@@ -49,42 +36,24 @@ Painter <|-- LinePainter
 Painter <|-- BoxPainter
 BoxPainter <|-- RectanglePainter
 Painter <|-- FillPainter
-
-CommandParser <|-- CreateCanvasCommandParser
-CommandParser <|-- FillCommandParser
-CommandParser <|-- QuitCommandParser
-CommandParser <|-- LineCommandParser
-CommandParser <|-- RectangleCommandParser
-CommandBuilder o-- CommandParser : Contains
-
-Command <|-- CreateCanvasCommand
-Command <|-- FillCommand
-Command <|-- QuitCommand
-Command <|-- LineCommand
-Command <|-- RectangleCommand
-CommandBuilder o-- Command : Contains
-
-FillCommand o-- FillPainter : Contains
-LineCommand o-- LinePainter : Contains
-RectangleCommand o-- RectanglePainter : Contains
+Painter <|-- CanvasPainter
 
 CanvasRunner o-- ICanvas : Contains
-CanvasRunner o-- CommandBuilder : Contains
+CanvasRunner o-- CommandParser : Contains
+CommandParser o-- Painter : returns
 
 enum StatusTypes {
 SUCCESS
 FAILED
 }
 
-class CommandParserException {
+class CanvasException {
     - message: String
 }
 
 class Pixel {
     - text: String
-    + position: Position
     + isBlank():Boolean
-    + isNotBlank():Boolean
 }
 
 class Position {
@@ -101,6 +70,7 @@ class CanvasConstants {
 }
 
 interface ICanvas {
+    + createCanvas(width: Int, height:Int): Boolean
     + printScreen()
     + isPositionAvailable(pos: Position): Boolean
     + isPositionWritable(pos: Position): Boolean
@@ -111,23 +81,13 @@ interface ICanvas {
 }
 class Canvas {
     + pixels: Array<Array<Pixel>>
+    + createCanvas(width: Int, height:Int): Boolean
     + printScreen()
     + isPositionAvailable(pos: Position): Boolean
     + isPositionWritable(pos: Position): Boolean
     + getPixelValueAt(pos: Position): String
     + setPixelValueAt() : Boolean
     + setPixelValueBetween() : List<Position>
-    + writableChildrenOf(pos: Position): List<Position>
-}
-
-class CanvasHolder {
-    - canvas: Canvas
-    + printScreen()
-    + isPositionAvailable(pos: Position): Boolean
-    + isPositionWritable(pos: Position): Boolean
-    + getPixelValueAt(pos: Position): String
-    + setPixelValueAt(): Boolean
-    + setPixelValueBetween(): List<Position>
     + writableChildrenOf(pos: Position): List<Position>
 }
 
@@ -166,74 +126,25 @@ class RectanglePainter {
     + validate(canvas: ICanvas): Status
 }
 
-interface Command {
-    + execute(canvas: ICanvas) : Status
+class CanvasPainter {
+    + paint(canvas: ICanvas): Status
 }
 
-class CreateCanvasCommand {
-     ~ width: Int
-     ~ height: Int
-     + execute(canvas: ICanvas): Status
+
+class CommandParser {
+    - createPainterFunList: MutableList<(String) -> Painter?>
+    + parse(cmd: String): Painter
+    - parseCommand(regex: Regex, string: String): MatchResult.Destructured ?
+    - createCanvasPainter(cmd: String):Painter?
+    - createFillCommandPainter(cmd: String): Painter?
+    - createLineCommandPainter(cmd:String): Painter?
+    - quiteCommandPainter(cmd: String) : Painter?
+    - fun rectangleCommandPainter(cmd: String): Painter?
 }
 
-class FillCommand {
-    ~ startWidth: Int
-    ~ startHeight: Int
-    ~ colour:String
-    + execute(canvas: ICanvas): Status
-}
-
-class LineCommand {
-    ~ startWidth: Int
-    ~ startHeight: Int
-    ~ endWidth: Int
-    ~ endHeight: Int
-    + execute(canvas: ICanvas): Status
-}
-
-class QuitCommand {
-    + execute(canvas: ICanvas): Status
-}
-
-class RectangleCommand {
-    ~ startWidth: Int
-    ~ startHeight: Int
-    ~ endWidth: Int
-    ~ endHeight: Int
-    + execute(canvas: ICanvas): Status
-}
-
-interface CommandParser {
-    + isMatched(cmd:String): Boolean
-    + parseCommand(cmd: String): Command
-}
-
-class CreateCanvasCommandParser {
-    + isMatched(cmd: String): Boolean
-    + parseCommand(cmd: String): Command
-}
-
-class FillCommandParser {
-    + isMatched(cmd: String): Boolean
-    + parseCommand(cmd: String): Command
-}
-
-class LineCommandParser {
-    + isMatched(cmd: String): Boolean
-    + parseCommand(cmd: String): Command
-}
-
-class QuitCommandParser {
-    + isMatched(cmd: String): Boolean
-    + parseCommand(cmd: String): Command
-}
-
-class RectangleCommandParser {
-    + isMatched(cmd: String): Boolean
-    + parseCommand(cmd: String): Command
-}
 
 class CanvasRunner {
+
     + main(args: Array<String>)
     - canvas: ICanvas
     - builder:CommandBuilder
@@ -243,9 +154,5 @@ class CanvasRunner {
     + start()
 }
 
-class CommandBuilder {
-    - command: String
-    + setStringCommand(string: String):CommandBuilder
-    + build():Command
-}
+
 @enduml

@@ -1,9 +1,10 @@
 package org.draw.paint
 
-import org.draw.paint.canvas.CanvasHolder
+import org.draw.paint.canvas.Canvas
 import org.draw.paint.canvas.ICanvas
-import org.draw.paint.command.CommandBuilder
+import org.draw.paint.command.CommandParser
 import org.draw.paint.common.Status
+import org.draw.paint.exception.CanvasExceptions
 import org.slf4j.LoggerFactory
 import java.util.*
 
@@ -18,13 +19,7 @@ class CanvasRunner {
         private val log =  LoggerFactory.getLogger(CanvasRunner::class.java)
     }
 
-    private val canvas: ICanvas
-    private val builder:CommandBuilder
-
-    init {
-        canvas =  CanvasHolder()
-        builder= CommandBuilder()
-    }
+    private var canvas: ICanvas =  Canvas()
 
     private fun readLine(): String {
         val scanner = Scanner(System.`in`)
@@ -32,7 +27,9 @@ class CanvasRunner {
     }
 
     internal fun executeCommand(command: String) {
-        val status = builder.setStringCommand(command).build().execute(canvas = this.canvas)
+
+
+        val status = CommandParser.parser.parse(cmd = command).paint(canvas = canvas)
 
         if(status.isSuccess()) {
             canvas.printScreen()

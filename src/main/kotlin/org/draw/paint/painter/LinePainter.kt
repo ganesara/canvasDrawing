@@ -48,6 +48,7 @@ class LinePainter(private val start: Position, private val end: Position) : Pain
         logger.debug("Affected positions Count =  ${affectedPositions.size}")
         logger.trace("Affected positions : $affectedPositions")
         logger.info("Painting of LinePainter completed ")
+
        return Success()
     }
 

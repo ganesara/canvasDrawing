@@ -1,6 +1,6 @@
 package org.draw.paint.painter
 
-import org.draw.paint.canvas.CanvasHolder
+import org.draw.paint.canvas.Canvas
 import org.draw.paint.canvas.Position
 import org.draw.paint.common.Failed
 import org.draw.paint.common.Success
@@ -30,7 +30,7 @@ class LinePainterTest {
 
     @Test
     fun testDrawNotFeasible() {
-        val holder = CanvasHolder()
+        val holder = Canvas()
         holder.createCanvas(width = 5, height = 6)
 
         var painter = LinePainter(start = Position(x=2, y=2),
@@ -63,7 +63,7 @@ class LinePainterTest {
 
     @Test
     fun testLinePrinterPaint() {
-        val holder =  CanvasHolder()
+        val holder =  Canvas()
         holder.createCanvas(width = 5, height = 6)
         val painter =  LinePainter(start = Position(x = 2, y = 4),  end = Position(x = 2, y = 2))
         val result = painter.paint(canvas = holder)
