@@ -1,6 +1,6 @@
 package org.draw.paint.painter
 
-import org.draw.paint.canvas.CanvasHolder
+import org.draw.paint.canvas.Canvas
 import org.draw.paint.canvas.Position
 import org.draw.paint.common.Failed
 import org.junit.After
@@ -30,7 +30,7 @@ class FillPainterTest {
 
     @Test
     fun testFillValidation() {
-        val holder =  CanvasHolder()
+        val holder =  Canvas()
         holder.createCanvas(width = 6, height = 7)
         val linePainter =  LinePainter(start = Position(2, 2),
             end = Position(5,2)
@@ -49,7 +49,7 @@ class FillPainterTest {
     @Test
     fun testFillByBreadthFirstSearch() {
 
-        val holder = CanvasHolder()
+        val holder = Canvas()
         holder.createCanvas(width = 6, height = 7)
         val painter =  RectanglePainter(start = Position(2,2),
             end = Position(5,6))
@@ -83,7 +83,7 @@ class FillPainterTest {
     @Test
     fun testFillByBreadthFirstSearchFillOutside() {
 
-        val holder = CanvasHolder()
+        val holder = Canvas()
         holder.createCanvas(width = 6, height = 7)
         val painter =  RectanglePainter(start = Position(2,2),
             end = Position(5,6))
@@ -123,7 +123,7 @@ class FillPainterTest {
     @Test
     fun testFillByBreadthFirstSearchFillTwoBox() {
 
-        val holder = CanvasHolder()
+        val holder = Canvas()
         holder.createCanvas(width = 10, height = 12)
         var painter =  RectanglePainter(start = Position(2,2),
             end = Position(6,7))

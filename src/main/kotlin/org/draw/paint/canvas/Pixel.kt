@@ -1,27 +1,17 @@
 package org.draw.paint.canvas
 
-open class Pixel(x: Int, y: Int) {
+open class Pixel() {
 
     var text: String = ""
-    val position: Position
 
-    init {
-        text = ""
-        position = Position(x, y)
-
-    }
-
-    constructor(x:Int, y:Int, text: String): this(x = x, y = y) {
-        this.text  =  text
+    constructor(txt: String): this() {
+        this.text = txt
     }
 
     fun isBlank():Boolean {
         return this.text.isBlank()
     }
 
-    fun isNotBlank():Boolean {
-        return this.text.isNotBlank()
-    }
 
     override fun equals(other: Any?): Boolean {
         return this.text == (other as? Pixel)?.text ?: "UNKNOWN"
@@ -32,12 +22,12 @@ open class Pixel(x: Int, y: Int) {
     }
 
     override fun toString(): String {
-        return this.text.toString()
+        return this.text
     }
 }
 
 data class Position(val x: Int, val y:Int)
 
-class WidthBorder(x: Int, y: Int) : Pixel(x = x, y = y, text = CanvasConstants.WIDTH_BORDER_CHAR)
+class WidthBorder : Pixel( txt = CanvasConstants.WIDTH_BORDER_CHAR)
 
-class HeightBorder(x: Int, y:Int) : Pixel(x = x, y = y, text =  CanvasConstants.HEIGHT_BORDER_CHAR)
+class HeightBorder : Pixel(txt =  CanvasConstants.HEIGHT_BORDER_CHAR)

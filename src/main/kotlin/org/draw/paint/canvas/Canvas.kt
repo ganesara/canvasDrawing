@@ -2,27 +2,49 @@ package org.draw.paint.canvas
 
 import org.slf4j.LoggerFactory
 
-class Canvas(private val width: Int, private val height: Int) : ICanvas {
+class Canvas(private var width: Int = 0, private var height: Int = 0) : ICanvas {
 
     companion object {
         private val logger =  LoggerFactory.getLogger(Canvas::class.java)
     }
 
-    private val pixels: Array<Array<Pixel>>
+    private var pixels: Array<Array<Pixel>>
 
     init {
 
-        pixels = Array(size = height + 2) {i ->
+        pixels = initPixel(width = width, height = height)
+    }
+
+    private fun initPixel(width: Int, height: Int): Array<Array<Pixel>> {
+
+        return Array(size = height + 2) {i ->
             Array(size = width + 2){j ->
                 if(i == 0 || i == height + 1) {
-                    WidthBorder(x = j, y = i)
+                    WidthBorder()
                 } else if(j == 0 || j == width + 1) {
-                    HeightBorder(x = j, y = i)
+                    HeightBorder()
                 } else {
-                    Pixel(x = j, y = i, text = CanvasConstants.DEFAULT_DISPLAY_CHAR)
+                    Pixel(txt = CanvasConstants.DEFAULT_DISPLAY_CHAR)
                 }
             }
         }
+    }
+
+    override fun createCanvas(width: Int, height: Int): Boolean {
+
+        return if(this.width == 0  || this.height == 0) {
+
+            this.width =  width
+            this.height =  height
+            this.pixels = initPixel(width = width, height = height)
+            true
+
+        } else {
+
+            false
+        }
+
+
     }
 
     override fun printScreen() {
@@ -98,7 +120,7 @@ class Canvas(private val width: Int, private val height: Int) : ICanvas {
             for(x in xRange) {
                 val pixel = this.pixels[y][x]
                 pixel.text = value
-                affectedList.add(pixel.position)
+                affectedList.add(Position(x = x, y = y))
             }
         }
 

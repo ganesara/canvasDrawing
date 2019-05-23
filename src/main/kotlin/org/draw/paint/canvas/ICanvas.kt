@@ -1,6 +1,8 @@
 package org.draw.paint.canvas
 
 interface ICanvas {
+
+    fun createCanvas(width: Int, height:Int): Boolean
     fun printScreen()
     fun isPositionAvailable(pos: Position): Boolean
     fun isPositionWritable(pos: Position): Boolean

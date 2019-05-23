@@ -112,28 +112,15 @@ Execution log files are created in the location `$projectDir/build/libs/logs`
 |Package| Class Name | Brief Intro|
 |-------|------------|------------|
 |org.draw.paint|CanvasRunner| **Entry Point**.It reads the console command and executes them.|
-|org.draw.paint.command|CommandBuilder|Helps to build command class from a string console command|
-|org.draw.paint.command|CommandParser| Base Class for all command parsers|
-|org.draw.paint.command|CreateCanvasCommandParser|Helps to match a command string; Parse the command string and creates CreateCanvasCommand object|
-|org.draw.paint.command|FillCommandParser|Helps to match a command string; Parse the command string and creates FillCommand object|
-|org.draw.paint.command|LineCommandParser|Helps to match a command string; Parse the command string and creates LineCommand object|
-|org.draw.paint.command|QuitCommandParser|Helps to match a command string; Parse the command string and creates QuitCommand object|
-|org.draw.paint.command|RectangleCommandParser|Helps to match a command string; Parse the command string and creates RectangleCommand object|
-|org.draw.paint.command|Command|Base interface for all commands|
-|org.draw.paint.command|CreateCanvasCommand|Creates Canvas with the given width and heigh|
-|org.draw.paint.command|FillCommand|Fills Closed area in the canvas with  the given colour|
-|org.draw.paint.command|LineCommand|Draws a line from given start to end positions|
-|org.draw.paint.command|QuitCommand|Quits the execution.|
-|org.draw.paint.command|RectangleCommand|Draws a Rectangle with given start and end positions|
 |org.draw.paint.painter|Painter|Base for all painters|
 |org.draw.paint.painter|BoxPainter|Painter to draw a Box in the canvas|
 |org.draw.paint.painter|FillPainter|Painter to Fill closed area in the canvas with given color|
 |org.draw.paint.painter|LinePainter|Painter to draw a line in the canvas|
 |org.draw.paint.painter|RectanglePainter|Painter to draw a rectangle in the canvas|
+|org.draw.paint.painter|CanvasPainter|Draws the Canvas with give width and height|
 |org.draw.paint.canvas|ICanvas|Base for all Canvas|
 |org.draw.paint.canvas|Canvas|Area with the given width and Height that holds drawing|
 |org.draw.paint.canvas|Pixel|Tiny part of Canvas which hold the draw value.|
-|org.draw.paint.canvas|CanvasHolder|Class that receives the painter and draws on the canvas|
 |org.draw.paint.canvas|CanvasConstants|Canvas Constants|
 
 ### Class Diagram Overview
