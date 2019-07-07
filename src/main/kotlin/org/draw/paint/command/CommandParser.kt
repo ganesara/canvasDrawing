@@ -9,7 +9,7 @@ import org.draw.paint.painter.*
 import org.slf4j.LoggerFactory
 import kotlin.system.exitProcess
 
-class CommandParser private  constructor() {
+object CommandParser  {
 
     private val createPainterFunList =  mutableListOf<(String) -> Painter?> (
         this::createCanvasPainter,
@@ -19,11 +19,7 @@ class CommandParser private  constructor() {
         this::rectangleCommandPainter
     )
 
-    companion object {
-        val parser = CommandParser()
-
-        private val log =  LoggerFactory.getLogger(CommandParser::class.java)
-    }
+    private val log =  LoggerFactory.getLogger(CommandParser::class.java)
 
     fun parse(cmd: String): Painter {
 

@@ -29,7 +29,7 @@ class CanvasRunner {
     internal fun executeCommand(command: String) {
 
 
-        val status = CommandParser.parser.parse(cmd = command).paint(canvas = canvas)
+        val status = CommandParser.parse(cmd = command).paint(canvas = canvas)
 
         if(status.isSuccess()) {
             canvas.printScreen()
