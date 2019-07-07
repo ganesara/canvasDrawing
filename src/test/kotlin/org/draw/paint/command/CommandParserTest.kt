@@ -13,23 +13,21 @@ class CommandParserTest {
 
     @Test
     fun testCreateCanvasPainter() {
-        val painter =  CommandParser.parser
-            .parse(cmd = "C 20 4")
+        val painter =  CommandParser.parse(cmd = "C 20 4")
 
         assertTrue(painter is CanvasPainter)
     }
 
     @Test
     fun testCreateFillCommandPainter() {
-        val result =  CommandParser.parser
-            .parse(cmd = "b 1 2 *")
+        val result =  CommandParser.parse(cmd = "b 1 2 *")
         assertTrue(result is FillPainter)
     }
 
     @Test
     fun testCreateLineCommandPainter() {
 
-        val result =  CommandParser.parser.parse(cmd = "L 1 2 6 2")
+        val result =  CommandParser.parse(cmd = "L 1 2 6 2")
         assertTrue(result is LinePainter)
     }
 
@@ -37,7 +35,7 @@ class CommandParserTest {
     @Test
     fun testRectangleCommandPainter() {
 
-        val result =  CommandParser.parser.parse(cmd = "r 1 2 6 2")
+        val result =  CommandParser.parse(cmd = "r 1 2 6 2")
         assertTrue(result is RectanglePainter)
 
     }
